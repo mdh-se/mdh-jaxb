@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>se.mdh</groupId>
+    <artifactId>mdh-parent</artifactId>
+    <version>36</version>
+    <relativePath>../mdh-parent/pom.xml</relativePath>
+  </parent>
+
+  <groupId>se.mdh.jaxb</groupId>
+  <artifactId>mdh-jaxb</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+
+  <name>${project.groupId}:${project.artifactId}</name>
+  <description>Hjälpklasser för JAXB.</description>
+  <url>https://github.com/mdh-se/${project.artifactId}</url>
+
+  <scm>
+    <connection>scm:git:https://github.com/mdh-se/${project.artifactId}.git</connection>
+    <developerConnection>scm:git:https://github.com/mdh-se/${project.artifactId}.git</developerConnection>
+    <tag>HEAD</tag>
+    <url>https://github.com/mdh-se/${project.artifactId}</url>
+  </scm>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <profiles>
+    <profile>
+      <id>java-11</id>
+      <!-- For plugins or dependencies that require at least Java 11 to run, or are required to build with Java 11 -->
+      <activation>
+        <jdk>[1.11,)</jdk>
+      </activation>
+      <dependencies>
+        <!-- Do NOT use com.sun.xml.bind:jaxb-impl! -->
+        <dependency>
+          <groupId>org.glassfish.jaxb</groupId>
+          <artifactId>jaxb-runtime</artifactId>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
+</project>
