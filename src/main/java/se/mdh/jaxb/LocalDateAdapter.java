@@ -19,7 +19,12 @@ public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
    */
   @Override
   public String marshal(LocalDate value) throws Exception {
-    return value.toString();
+    if(value == null) {
+      return null;
+    }
+    else {
+      return value.toString();
+    }
   }
 
   /**
@@ -29,6 +34,11 @@ public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
    */
   @Override
   public LocalDate unmarshal(String value) throws Exception {
-    return LocalDate.parse(value);
+    if(value == null) {
+      return null;
+    }
+    else {
+      return LocalDate.parse(value);
+    }
   }
 }
