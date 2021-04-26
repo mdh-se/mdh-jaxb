@@ -18,7 +18,7 @@ public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
    * {@inheritDoc}
    */
   @Override
-  public String marshal(LocalDate value) throws Exception {
+  public String marshal(final LocalDate value) throws Exception {
     if(value == null) {
       return null;
     }
@@ -33,7 +33,7 @@ public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
    * {@inheritDoc}
    */
   @Override
-  public LocalDate unmarshal(String value) throws Exception {
+  public LocalDate unmarshal(final String value) throws Exception {
     if(value == null) {
       return null;
     }
