@@ -12,7 +12,15 @@ import javax.xml.bind.Marshaller;
  * @author Dennis Lundberg
  * @since 1.1.0
  */
-public class JaxbUtils {
+public final class JaxbUtils {
+
+  /**
+   * En privat konstruktor för att förhindra skapandet av instanser av
+   * utilityklassen.
+   */
+  private JaxbUtils() {
+  }
+
   /**
    * Hjälpmetod som konverterar ett JAXB-annoterat objekt till en XML-sträng.
    * http://www.thinkcode.se/blog/2010/01/19/how-to-convert-a-pojo-to-xml-with-jaxb
@@ -22,7 +30,7 @@ public class JaxbUtils {
    * @return En sträng med XML
    * @throws JAXBException Om det inte går att omvandla objektet till XML
    */
-  public String toXml(final Object objekt, final Class... typer)
+  public static String toXml(final Object objekt, final Class... typer)
       throws JAXBException {
     JAXBContext context = JAXBContext.newInstance(typer);
     Marshaller marshaller = context.createMarshaller();
@@ -31,4 +39,5 @@ public class JaxbUtils {
     Writer writer = new StringWriter();
     marshaller.marshal(objekt, writer);
     return writer.toString();
-  }}
+  }
+}
