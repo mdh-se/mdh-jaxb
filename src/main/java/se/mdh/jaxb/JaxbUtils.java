@@ -32,6 +32,7 @@ public final class JaxbUtils {
    * @param typer Typer som objektet innehåller
    * @return En sträng med XML
    * @throws JAXBException Om det inte går att omvandla objektet till XML
+   * @deprecated Använd {@link #toXml(Object)} istället
    */
   @Deprecated
   public static String toXml(final Object objekt, final Class... typer)
