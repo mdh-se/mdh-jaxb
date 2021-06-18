@@ -60,7 +60,9 @@ public final class JaxbUtils {
     return objectToString(objekt, context);
   }
 
-  private static String objectToString(Object objekt, JAXBContext context) throws JAXBException {
+  private static String objectToString(final Object objekt,
+                                       final JAXBContext context)
+      throws JAXBException {
     Marshaller marshaller = context.createMarshaller();
     marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
     marshaller.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
