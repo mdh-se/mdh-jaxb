@@ -30,6 +30,17 @@
       <artifactId>jaxb-api</artifactId>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>se.mdh.jaxb</groupId>
+      <artifactId>mdh-jaxb</artifactId>
+      <version>1.1.1</version>
+    </dependency>
   </dependencies>
 
   <profiles>
