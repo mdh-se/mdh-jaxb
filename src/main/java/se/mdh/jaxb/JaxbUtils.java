@@ -15,7 +15,6 @@ import javax.xml.bind.Marshaller;
  */
 public final class JaxbUtils {
   private static HashMap<String, JAXBContext> jaxbContextHashMap = new HashMap<>();
-  private static JAXBContext context = null;
 
   /**
    * En privat konstruktor för att förhindra skapandet av instanser av
@@ -48,6 +47,7 @@ public final class JaxbUtils {
    * @param objekt Det objekt som ska konverteras
    * @return En sträng med XML
    * @throws JAXBException Om det inte går att omvandla objektet till XML
+   * @since 1.2.0
    */
   public static String toXml(final Object objekt)
       throws JAXBException {
