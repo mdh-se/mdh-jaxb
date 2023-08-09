@@ -10,7 +10,7 @@ public class JaxbUtilsTest {
   @Test
   public void toXml() throws JAXBException {
     SimpleObject simpleObject = new SimpleObject();
-    String xml = JaxbUtils.toXml(simpleObject, simpleObject.getClass());
+    String xml = JaxbUtils.toXml(simpleObject);
     assertTrue(xml.contains("simpleObject"));
   }
 
