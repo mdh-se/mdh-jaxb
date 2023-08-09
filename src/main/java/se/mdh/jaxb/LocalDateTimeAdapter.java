@@ -1,6 +1,7 @@
 package se.mdh.jaxb;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 /**
@@ -23,7 +24,7 @@ public class LocalDateTimeAdapter extends XmlAdapter<String, LocalDateTime> {
       return null;
     }
     else {
-      return value.toString();
+      return value.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
     }
   }
 
