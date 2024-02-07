@@ -5,8 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class JaxbUtilsTest {
-
+public class JaxbUtilsTestCase {
   @Test
   public void toXml() throws JAXBException {
     SimpleObject simpleObject = new SimpleObject();
