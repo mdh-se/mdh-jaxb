@@ -5,7 +5,7 @@
   <parent>
     <groupId>se.mdh</groupId>
     <artifactId>mdh-parent</artifactId>
-    <version>59</version>
+    <version>60-SNAPSHOT</version>
     <relativePath>../mdh-parent/pom.xml</relativePath>
   </parent>
 
@@ -25,6 +25,7 @@
   </scm>
 
   <dependencies>
+    <!-- Implementation javax.xml.bind -->
     <dependency>
       <groupId>com.sun.xml.bind</groupId>
       <artifactId>jaxb-impl</artifactId>
