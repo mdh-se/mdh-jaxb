@@ -14,7 +14,8 @@ import javax.xml.bind.Marshaller;
  * @since 1.1.0
  */
 public final class JaxbUtils {
-  private static HashMap<String, JAXBContext> jaxbContextHashMap = new HashMap<>();
+  private static HashMap<String, JAXBContext> jaxbContextHashMap =
+      new HashMap<>();
 
   /**
    * En privat konstruktor för att förhindra skapandet av instanser av
@@ -25,7 +26,8 @@ public final class JaxbUtils {
 
   /**
    * Hjälpmetod som konverterar ett JAXB-annoterat objekt till en XML-sträng.
-   * http://www.thinkcode.se/blog/2010/01/19/how-to-convert-a-pojo-to-xml-with-jaxb
+   * (<a href="http://www.thinkcode.se/blog/2010/01/19/how-to-convert-a-pojo-
+   * to-xml-with-jaxb">Blog post: how-to-convert-a-pojo-to-xml-with-jaxb</a>)
    *
    * @param objekt Det objekt som ska konverteras
    * @param typer Typer som objektet innehåller
