@@ -12,6 +12,8 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
  * @since 1.0.0
  */
 public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
+  private static final int Z_DATE_LENGTH = 11;
+  private static final int Z_POSITION = 10;
   /**
    * Returnera värdet av en Java-datatyp som text för användning i XML.
    *
@@ -36,6 +38,12 @@ public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
   public LocalDate unmarshal(final String value) throws Exception {
     if(value == null) {
       return null;
+    }
+    // Vissa externa parter (vi tittar på er Alma) lägger på ett Z på sina
+    // xml-datumsträngar "2025-08-22Z" som måste ignoreras...
+    else if (value.length() == Z_DATE_LENGTH
+        && value.charAt(Z_POSITION) == 'Z') {
+      return LocalDate.parse(value.substring(0, value.length() - 1));
     }
     else {
       return LocalDate.parse(value);
