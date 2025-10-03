@@ -26,8 +26,7 @@ public final class JaxbUtils {
 
   /**
    * Hjälpmetod som konverterar ett JAXB-annoterat objekt till en XML-sträng.
-   * (<a href="http://www.thinkcode.se/blog/2010/01/19/how-to-convert-a-pojo-
-   * to-xml-with-jaxb">Blog post: how-to-convert-a-pojo-to-xml-with-jaxb</a>)
+   * Se www.thinkcode.se/blog/2010/01/19/how-to-convert-a-pojo-to-xml-with-jaxb
    *
    * @param objekt Det objekt som ska konverteras
    * @param typer Typer som objektet innehåller
